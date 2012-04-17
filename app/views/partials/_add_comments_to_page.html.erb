@@ -1,0 +1,8 @@
+<% unless @comments.empty? %>
+<%= render :partial => "partials/comments_list" %>
+<% end %>
+<% if @comments.empty? %>
+No comments yet on this article.
+<% end %>
+
+<%= render :partial => "partials/comments_form" %>

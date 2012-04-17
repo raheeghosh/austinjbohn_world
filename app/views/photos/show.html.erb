@@ -1,3 +1,4 @@
+
 <p>
   <% unless @photo.image_url.nil? %> 
 		<p><%= image_tag @photo.image_url %></p>
@@ -16,6 +17,10 @@
   <b>Active</b>: 
   <%= @photo.active ? "Yes" : "No" %>
 </p>
+
+<% @comments = @photo.comments %>
+<% @commentable = @photo %>
+<%= render :partial => "partials/add_comments_to_page", :locals => {obj: @photo} %>
 
 <div class="form-actions">
   <%= link_to 'Back', photos_path, :class => 'btn'  %>
